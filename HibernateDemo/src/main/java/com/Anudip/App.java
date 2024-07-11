@@ -1,0 +1,61 @@
+package com.Anudip;
+
+import java.util.HashSet;
+import java.util.Set;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+
+/**
+ * Hello world!
+ *
+ */
+public class App {
+	public static void main(String[] args) {
+		// configure the hibernate.cfg.xml file
+		Configuration cfg = new Configuration();
+		cfg.configure("hiber.cfg.xml");
+		// build the session factory for configuration
+		SessionFactory sessionFactory = cfg.buildSessionFactory();
+		//open the session for 1 session factory
+		Session session = sessionFactory.openSession();
+		
+		Transaction tx = session.beginTransaction();
+		
+		Employee emp1 = new Employee();
+		Employee emp2 = new Employee();
+		Department dept = new Department();
+		
+		
+		
+		emp1.setId(4);
+		emp1.setName("Avinash");
+		emp1.setDesig("Software Developer");
+		emp1.setSal(1000000);
+		emp1.setDepartment(dept);
+		
+		emp2.setId(3);
+		emp2.setName("Asha");
+		emp2.setDesig("Analyst");
+		emp2.setSal(500000);
+		emp2.setDepartment(dept);
+		
+		
+		Set<Employee> EmpList = new HashSet<Employee>();
+        EmpList.add(emp1);
+        EmpList.add(emp2);
+        
+        dept.setD_id(2);
+        dept.setDName("CSE");
+        dept.setEmployee(EmpList);
+		
+		session.save(emp1);
+		session.save(emp2);
+		session.save(dept);
+		System.out.println("Employee is added");
+		tx.commit();
+		session.close();
+		}
+}

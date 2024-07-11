@@ -1,0 +1,5 @@
+package com.Anudip.config;
+
+public class HiberUtil {
+
+}

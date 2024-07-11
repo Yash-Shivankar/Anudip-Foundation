@@ -1,0 +1,36 @@
+package com.Anudip;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+
+/**
+ * Hello world!
+ *
+ */
+public class App {
+	public static void main(String[] args) {
+		// configure the hibernate.cfg.xml file
+		Configuration cfg = new Configuration();
+		cfg.configure("hiber.cfg.xml");
+		// build the session factory for configuration
+		SessionFactory sessionFactory = cfg.buildSessionFactory();
+		//open the session for 1 session factory
+		Session session = sessionFactory.openSession();
+		
+		Transaction tx = session.beginTransaction();
+		
+		Employee emp = new Employee();
+		emp.setId(2);
+		emp.setName("Avinash");
+		emp.setDesig("Software Developer");
+		emp.setDept("IT");
+		emp.setSal(1000000);
+		
+		session.save(emp);
+		System.out.println("Employee is added");
+		tx.commit();
+		session.close();
+		}
+}

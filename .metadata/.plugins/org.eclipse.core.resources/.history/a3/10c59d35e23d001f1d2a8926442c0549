@@ -1,0 +1,78 @@
+package com.Anudip.daoimpl;
+
+
+
+import java.util.Scanner;
+
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+
+import com.Anudip.Entity.Employee;
+import com.Anudip.config.HiberUtil;
+import com.Anudip.dao.EmployeeDao;
+
+public class EmployeeDaoImpl implements EmployeeDao {
+
+	@Override
+	public void addEmp() {
+		
+		HiberUtil.getSessionFactory();
+		
+		Session session  = HiberUtil.getSessionFactory().openSession();
+		
+		Transaction tx = session.beginTransaction();
+		
+		Scanner sc = new Scanner(System.in);
+		
+		//int empid;
+		String fName, lName, phone, address, desig;
+		
+		System.out.println("Enter your First Name:");
+		fName = sc.next();
+		
+		System.out.println("Enter your Last Name:");
+		lName = sc.next();
+		
+		System.out.println("Enter your Mobile no.:");
+		phone = sc.next();
+		
+		System.out.println("Enter your Address:");
+		address = sc.next();
+		
+		System.out.println("Enter your Designation:");
+		desig = sc.next();
+		
+		Employee emp = new Employee();
+		emp.setfName(fName);
+		emp.setlName(lName);
+		emp.setPhone(phone);
+		emp.setAdd(address);
+		emp.setDesig(desig);
+		
+		session.save(emp);
+		tx.commit();
+		session.close();
+		System.out.println("Employee saved");
+	}
+
+	@Override
+	public void deleteEmp() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void getEmp() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void updateEmp() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	
+
+}

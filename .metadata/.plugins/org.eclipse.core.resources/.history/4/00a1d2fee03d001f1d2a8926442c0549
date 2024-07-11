@@ -1,0 +1,43 @@
+package com.Anudip.daoimpl;
+
+
+
+import org.hibernate.Session;
+
+import com.Anudip.config.HiberUtil;
+import com.Anudip.dao.EmployeeDao;
+
+public class EmployeeDaoImpl implements EmployeeDao {
+
+	@Override
+	public void addEmp() {
+		
+		HiberUtil.getSessionFactory();
+		
+		Session session  = HiberUtil.getSessionFactory().openSession();
+		
+		
+		
+	}
+
+	@Override
+	public void deleteEmp() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void getEmp() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void updateEmp() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	
+
+}

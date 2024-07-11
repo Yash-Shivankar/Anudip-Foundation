@@ -1,0 +1,35 @@
+package com.Anudip.daoimpl;
+
+import org.hibernate.cfg.Configuration;
+
+import com.Anudip.dao.EmployeeDao;
+
+public class EmployeeDaoImpl implements EmployeeDao {
+
+	@Override
+	public void addEmp() {
+		Configuration cfg = new Configuration();
+		
+	}
+
+	@Override
+	public void deleteEmp() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void getEmp() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void updateEmp() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	
+
+}

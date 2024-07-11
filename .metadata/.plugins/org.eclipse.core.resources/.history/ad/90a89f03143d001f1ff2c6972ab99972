@@ -1,0 +1,25 @@
+package com.Anudip;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
+/**
+ * Hello world!
+ *
+ */
+public class App 
+{
+    public static void main( String[] args )
+    {
+        Configuration cfg = new Configuration();
+        cfg.configure("hiber.cfg.xml");
+        
+        SessionFactory sessionfactory = cfg.buildSessionFactory();
+        
+        Session session = sessionFactory.openSession();
+        
+        Session tx = session.beginTransaction();
+        
+    }
+}

@@ -1,0 +1,9 @@
+package com.Anudip;
+
+public class Child {
+	
+	private int C_id;
+	private String CName;
+	private Parent parent;
+
+}

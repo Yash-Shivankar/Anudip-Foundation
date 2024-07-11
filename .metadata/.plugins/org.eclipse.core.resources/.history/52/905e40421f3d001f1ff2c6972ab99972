@@ -1,0 +1,76 @@
+package com.Anudip;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "Emp_details")
+public class Employee {
+	@javax.persistence.Id
+	private int Id;
+	@Column(name = "EmpName")
+	private String Name;
+	private String Desig;
+	private String Dept;
+	private int sal;
+
+	@Override
+	public String toString() {
+		return "Employee [Id=" + Id + ", Name=" + Name + ", Desig=" + Desig + ", Dept=" + Dept + ", sal=" + sal + "]";
+	}
+
+	public int getId() {
+		return Id;
+	}
+
+	public void setId(int id) {
+		Id = id;
+	}
+
+	public String getName() {
+		return Name;
+	}
+
+	public void setName(String name) {
+		Name = name;
+	}
+
+	public String getDesig() {
+		return Desig;
+	}
+
+	public void setDesig(String desig) {
+		Desig = desig;
+	}
+
+	public String getDept() {
+		return Dept;
+	}
+
+	public void setDept(String dept) {
+		Dept = dept;
+	}
+
+	public int getSal() {
+		return sal;
+	}
+
+	public void setSal(int sal) {
+		this.sal = sal;
+	}
+
+	public Employee(int id, String name, String desig, String dept, int sal) {
+		super();
+		Id = id;
+		Name = name;
+		Desig = desig;
+		Dept = dept;
+		this.sal = sal;
+	}
+
+	public Employee() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+}

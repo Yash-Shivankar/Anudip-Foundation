@@ -1,0 +1,71 @@
+package com.Anudip;
+
+import javax.persistence.Entity;
+
+@Entity
+public class Employee {
+	int Id;
+	String Name;
+	String Desig;
+	String Dept;
+	int sal;
+
+	@Override
+	public String toString() {
+		return "Employee [Id=" + Id + ", Name=" + Name + ", Desig=" + Desig + ", Dept=" + Dept + ", sal=" + sal + "]";
+	}
+
+	public int getId() {
+		return Id;
+	}
+
+	public void setId(int id) {
+		Id = id;
+	}
+
+	public String getName() {
+		return Name;
+	}
+
+	public void setName(String name) {
+		Name = name;
+	}
+
+	public String getDesig() {
+		return Desig;
+	}
+
+	public void setDesig(String desig) {
+		Desig = desig;
+	}
+
+	public String getDept() {
+		return Dept;
+	}
+
+	public void setDept(String dept) {
+		Dept = dept;
+	}
+
+	public int getSal() {
+		return sal;
+	}
+
+	public void setSal(int sal) {
+		this.sal = sal;
+	}
+
+	public Employee(int id, String name, String desig, String dept, int sal) {
+		super();
+		Id = id;
+		Name = name;
+		Desig = desig;
+		Dept = dept;
+		this.sal = sal;
+	}
+
+	public Employee() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+}

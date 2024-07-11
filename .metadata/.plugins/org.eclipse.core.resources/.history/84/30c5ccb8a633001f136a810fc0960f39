@@ -1,0 +1,38 @@
+package com.Anudip;
+
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+public class ObjectAssertTest {
+
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception {
+		Object[] expectedEmps = new Object();
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception {
+	}
+
+	@Before
+	public void setUp() throws Exception {
+		expectedEmps[0] = new Employee(122, "Padmaja", "1200000")
+	}
+
+	@After
+	public void tearDown() throws Exception {
+	}
+
+	@Test
+	public void test() {
+		Object[] testOutput = Employee.getEmpList().toArray();
+		assert
+		fail("Not yet implemented");
+	}
+
+}
